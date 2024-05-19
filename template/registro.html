@@ -1,0 +1,72 @@
+{% include("cabecera.html") %}
+
+<!-----FORMULARIO DE REGISTRO-->
+
+  <div class="caja">
+      <form class="form-control" action="crear-registro" method="post">
+        <!---alertas-->
+          <!----------->
+          <h1 class="text-center t">hola</h1>
+          {% if mensaje %}
+          <div class="alert alert-danger" role="alert">
+              {{ mensaje}}
+            </div>
+            {% endif %}
+
+    <div class="form-group">
+      <label for="exampleInputNombre" class="t text-center">Nombre</label>
+        <input type="text" class="form-control" id="exampleInputNombre" placeholder="Ingrese su nombre" name="txtNombre">
+    </div>
+    <br>
+    
+    <div class="form-group">
+      <label for="exampleInputApellido" class="t text-center">Apellido</label>
+        <input type="text" class="form-control" id="exampleInputApellido" placeholder="Ingrese su apellido" name="txtApellido">
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label for="exampleInputFecha" class="t text-center">Fecha de nacimiento</label>
+        <input type="date" class="form-control" id="exampleInputFecha" placeholder="Ingrese su fecha de nacimiento" name="txtFecha">
+    </div>
+    <br> 
+
+    <div class="form-group ">
+      <label for="exampleInputEmail1 " class="t text-center">Correo</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su Correo " name="txtCorreo">
+      <small id="emailHelp" class="form-text text-muted"></small>
+    </div> <br>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1 " class="t text-center">Contraseña</label>
+      <input type="password" class="form-control"maxlength="8" id="exampleInputPassword1" placeholder="Ingrese su Contraseña" name="txtPassword">
+      <i class='bx bx-show-alt' ></i>
+      
+    </div>
+    <script>
+      const exampleInputPassword1 = document.getElementById("exampleInputPassword1"),
+      icon = document.querySelector(".bx");
+
+      icon.addEventListener("click", e => {
+        if(exampleInputPassword1.type === "password"){
+        exampleInputPassword1.type = "text";
+        icon.classList.remove('bx-show-alt')
+        icon.classList.add('bx-low-vision')
+      }else{
+        exampleInputPassword1.type = "password"
+        icon.classList.add('bx-show-alt')
+        icon.classList.remove('bx-low-vision')
+        }
+      })
+  </script>
+
+    <div class="form-check">
+
+    </div>
+    <div class="text-center">
+    <button type="submit" class="btn btn-success">Registrar</button>
+  </div>
+ 
+  </form>
+
+<!-----FIN--------->
